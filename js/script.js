@@ -11,7 +11,7 @@
        //center: {lat: -33.8688, lng: 151.2195},
        //zoom: 13,
        //mapTypeId: 'roadmap',
-  	
+
  	 //mapTypeControl: true,
           //mapTypeControlOptions: {
             //  style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
@@ -72,26 +72,26 @@
   //         anchor: new google.maps.Point(17, 34),
   //         scaledSize: new google.maps.Size(25, 25)
   //       };
-        
+
   //        var infowindow = new google.maps.InfoWindow();
   //   var service = new google.maps.places.PlacesService(map);
-        
-  // $.getJSON( "https://data.mo.gov/api/views/eb3y-vtsa/rows.json", function( data ) { 
-    
+
+  // $.getJSON( "https://data.mo.gov/api/views/eb3y-vtsa/rows.json", function( data ) {
+
   //   for(var i = 0; i < data.data.length; i++)
   //   {
-                
+
   //               var latt = parseFloat(data.data[i][12][1]);
   //               var longg = parseFloat(data.data[i][12][2]);
   //               var latLng = new google.maps.LatLng(latt, longg);
-                
-                
+
+
   //              var agencyname = data.data[i][8];
   //              var phonenumber = data.data[i][10];
   //              var hoursop = data.data[i][11];
   //              var address = data.data[i][12][0];
   //               // Create a marker for each place.
-                
+
   //               var contentString = '<div id="content">'+
   //                                   '<div id="siteNotice">'+
   //                                   '</div>'+
@@ -101,26 +101,26 @@
   //                                         '<p><b>Hours of Operation: </b>' + hoursop + '</p>' +
   //                                         '<p><b>Address: </b>' + address + '</p>' +
   //                                   '</div>'+
-  //                                   '</div>'; 
-  //               var marker=new google.maps.Marker({position:latLng, clickable:true, map:map, animation:google.maps.Animation.DROP 
+  //                                   '</div>';
+  //               var marker=new google.maps.Marker({position:latLng, clickable:true, map:map, animation:google.maps.Animation.DROP
   //               });
-        
+
   //               var infowindow = new google.maps.InfoWindow({
   //                 content: contentString
   //               });
-                
-  //               google.maps.event.addListener(marker,'click', (function(marker,infowindow){ 
+
+  //               google.maps.event.addListener(marker,'click', (function(marker,infowindow){
   //                     return function() {
   //                        infowindow.open(map,marker);
   //                     };
-  //                 })(marker,infowindow)); 
-                            
-                            
+  //                 })(marker,infowindow));
+
+
   //               markers.push(marker);
   //     }
-             
+
   //     });//end of getJSON
-    
+
   //       if (place.geometry.viewport) {
   //         // Only geocodes have viewport.
   //         bounds.union(place.geometry.viewport);
@@ -194,20 +194,20 @@ function initAutocomplete() {
         anchor: new google.maps.Point(17, 34),
         scaledSize: new google.maps.Size(25, 25)
       };
-      
+
        var infowindow = new google.maps.InfoWindow();
   var service = new google.maps.places.PlacesService(map);
-      
-$.getJSON( "https://data.mo.gov/api/views/eb3y-vtsa/rows.json", function( data ) { 
-  
+
+$.getJSON( "https://data.mo.gov/api/views/eb3y-vtsa/rows.json", function( data ) {
+
   for(var i = 0; i < data.data.length; i++)
             {
-              
+
               var latt = parseFloat(data.data[i][12][1]);
               var longg = parseFloat(data.data[i][12][2]);
               var latLng = new google.maps.LatLng(latt, longg);
-              
-              
+
+
              var agencyname = data.data[i][8];
              var phonenumber = data.data[i][10];
              var hoursop = data.data[i][11];
@@ -219,8 +219,8 @@ $.getJSON( "https://data.mo.gov/api/views/eb3y-vtsa/rows.json", function( data )
       //   title: place.name,
       //   position: latLng
       // }));
-              
-              
+
+
                     var contentString = '<div id="content">'+
       '<div id="siteNotice">'+
       '</div>'+
@@ -229,28 +229,29 @@ $.getJSON( "https://data.mo.gov/api/views/eb3y-vtsa/rows.json", function( data )
       '<p><b>Phone Number: </b>' + phonenumber +'</p>'+
             '<p><b>Hours of Operation: </b>' + hoursop + '</p>' +
             '<p><b>Address: </b>' + address + '</p>' +
+
       '</div>'+
       '</div>';
-        
-              
-              
-              
-              
+
+
+
+
+
               var marker=new google.maps.Marker({position:latLng, clickable:true, map:map, animation:google.maps.Animation.DROP });
-      
+
   var infowindow = new google.maps.InfoWindow({
     content: contentString
   });
-              google.maps.event.addListener(marker,'click', (function(marker,infowindow){ 
+              google.maps.event.addListener(marker,'click', (function(marker,infowindow){
         return function() {
            infowindow.open(map,marker);
         };
-    })(marker,infowindow)); 
-              
+    })(marker,infowindow));
+
 //        google.maps.event.addListener(marker,'click',function() {
-        
+
 //              // var placeID = data.data[i][0];
-              
+
 //         var contentString = '<div id="content">'+
 //       '<div id="siteNotice">'+
 //       '</div>'+
@@ -261,18 +262,18 @@ $.getJSON( "https://data.mo.gov/api/views/eb3y-vtsa/rows.json", function( data )
 //             '<p><b>Address: </b>' + address + '</p>' +
 //       '</div>'+
 //       '</div>';
-        
+
   //             var infowindow = new google.maps.InfoWindow({
   //   content: contentString
   // });
 //      infowindow.open(map, marker);
 //      map.panTo(marker.getPosition());
 //      });
-              
+
               markers.push(marker);}
-           
+
     });//end of getJSON
-  
+
       if (place.geometry.viewport) {
         // Only geocodes have viewport.
         bounds.union(place.geometry.viewport);
@@ -282,10 +283,9 @@ $.getJSON( "https://data.mo.gov/api/views/eb3y-vtsa/rows.json", function( data )
     });
     map.fitBounds(bounds);
   });
-  
+
 
 }
 
 
 google.maps.event.addDomListener(window, 'load', initAutocomplete);
-
